@@ -80,14 +80,17 @@ export function About() {
                         </h1>
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            {stats.map((stat, index) => (
-                                <div key={index} className="flex items-center gap-4 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
-                                    <span className={`p-2 rounded-md bg-black/30 ${stat.color}`}>
-                                        <stat.icon size={20} />
-                                    </span>
-                                    <span className="text-gray-300 font-medium">{stat.label}</span>
-                                </div>
-                            ))}
+                            {stats.map((stat, index) => {
+                                const Icon = stat.icon;
+                                return (
+                                    <div key={index} className="flex items-center gap-4 p-3 rounded-lg bg-white/5 hover:bg-white/10 transition-colors">
+                                        <span className={`p-2 rounded-md bg-black/30 ${stat.color}`}>
+                                            <Icon size={20} />
+                                        </span>
+                                        <span className="text-gray-300 font-medium">{stat.label}</span>
+                                    </div>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
@@ -111,19 +114,22 @@ export function About() {
                     <div>
                         <h2 className="text-2xl font-bold text-white mb-8 border-l-4 border-white pl-4 uppercase tracking-tighter">CONNECT</h2>
                         <div className="grid grid-cols-1 gap-4">
-                            {socials.map((social) => (
-                                <Link key={social.name} href={social.url} target="_blank">
-                                    <div className="p-4 bg-[#111] border border-white/5 hover:bg-[#1a1a1a] transition-all group/item flex items-center gap-4 rounded-xl">
-                                        <div className="p-3 rounded-lg bg-neutral-800 text-white group-hover/item:bg-white group-hover/item:text-black transition-all">
-                                            <social.icon size={20} />
+                            {socials.map((social) => {
+                                const Icon = social.icon;
+                                return (
+                                    <Link key={social.name} href={social.url} target="_blank">
+                                        <div className="p-4 bg-[#111] border border-white/5 hover:bg-[#1a1a1a] transition-all group/item flex items-center gap-4 rounded-xl">
+                                            <div className="p-3 rounded-lg bg-neutral-800 text-white group-hover/item:bg-white group-hover/item:text-black transition-all">
+                                                <Icon size={20} />
+                                            </div>
+                                            <div>
+                                                <h3 className="text-gray-500 text-xs font-medium uppercase tracking-widest">{social.name}</h3>
+                                                <p className="text-base font-bold text-white group-hover/item:text-white transition-colors">{social.handle}</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h3 className="text-gray-500 text-xs font-medium uppercase tracking-widest">{social.name}</h3>
-                                            <p className="text-base font-bold text-white group-hover/item:text-white transition-colors">{social.handle}</p>
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))}
+                                    </Link>
+                                );
+                            })}
                         </div>
                     </div>
                 </div>
