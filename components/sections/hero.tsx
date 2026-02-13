@@ -37,10 +37,7 @@ export function Hero() {
 
                     {/* Content Area */}
                     <div className="flex-1 flex flex-col justify-center">
-                        <div className="flex items-center gap-2 mb-4">
-                            <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-                            <span className="text-sm font-medium text-gray-300 tracking-wide uppercase">Available for hire</span>
-                        </div>
+
 
                         <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-12">
                             BRIAN MELLY
