@@ -34,23 +34,23 @@ export async function POST(request: Request) {
         }
 
         // 2. Send auto-responder to the sender
-        // Note: Resend onboarding allows sending only to the owner's email.
-        // We wrap this in a try/catch so the main submission still succeeds even if the auto-responder is blocked.
-        try {
-            await resend.emails.send({
-                from: 'Brian Melly <onboarding@resend.dev>',
-                to: email,
-                subject: 'Message Received - Brian Melly',
-                html: `
-                    <h3>Hi ${name},</h3>
-                    <p>I've received your message, thank you for contacting me and I'll respond in a few.</p>
-                    <br/>
-                    <p>Best regards,</p>
-                    <p>Brian Melly</p>
-                `,
-            });
-        } catch (autoResponderError) {
-            console.error("Auto-responder failed (likely Resend onboarding restriction):", autoResponderError);
+        // Note: Resend onboarding allows sending only to the owner's email address.
+        // We check for the error property because Resend returns an error object rather than throwing on API-level issues.
+        const { error: responderError } = await resend.emails.send({
+            from: 'Brian Melly <onboarding@resend.dev>',
+            to: email,
+            subject: 'Message Received - Brian Melly',
+            html: `
+                <h3>Hi ${name},</h3>
+                <p>I've received your message, thank you for contacting me and I'll respond in a few.</p>
+                <br/>
+                <p>Best regards,</p>
+                <p>Brian Melly</p>
+            `,
+        });
+
+        if (responderError) {
+            console.error("Auto-responder failed (likely Resend onboarding restriction):", responderError);
         }
 
         return NextResponse.json({ success: true });
