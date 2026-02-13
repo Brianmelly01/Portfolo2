@@ -26,7 +26,10 @@ export function Skills() {
                             { name: "JavaScript", level: 85 },
                             { name: "Docker", level: 65 },
                             { name: "TypeScript", level: 70 },
-                            { name: "Node.js", level: 65 }
+                            { name: "Node.js", level: 65 },
+                            { name: "UI/UX Design", level: 85 },
+                            { name: "Figma", level: 95 },
+                            { name: "DevOps", level: 50 },
                         ].map((skill) => (
                             <div key={skill.name}>
                                 <div className="flex justify-between mb-2">
@@ -60,7 +63,13 @@ export function Skills() {
                             { name: "Node.js", letter: "N" },
                             { name: "MongoDB", letter: "M" },
                             { name: "Express", letter: "E" },
-                            { name: "Styled Components", letter: "S" }
+                            { name: "Styled Components", letter: "S" },
+                            { name: "Git", letter: "G" },
+                            { name: "Figma", letter: "F" },
+                            { name: "Firebase", letter: "F" },
+                            { name: "GraphQL", letter: "G" },
+                            { name: "WebGL", letter: "W" },
+                            { name: "Framer Motion", letter: "F" }
                         ].map((tool) => (
                             <Card key={tool.name} className="p-4 bg-[#111] border-white/5 flex items-center gap-4 hover:bg-[#1a1a1a] transition-colors group">
                                 <div className="w-10 h-10 rounded bg-neutral-800 text-white flex items-center justify-center font-bold group-hover:bg-white group-hover:text-black transition-colors">
