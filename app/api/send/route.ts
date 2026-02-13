@@ -14,7 +14,7 @@ export async function POST(request: Request) {
         const { name, email, message } = await request.json();
 
         // 1. Send email to Brian
-        const toBrian = await resend.emails.send({
+        const { data: brianData, error: brianError } = await resend.emails.send({
             from: 'Portfolio <onboarding@resend.dev>',
             to: 'Brianmelly008@gmail.com',
             subject: `New Message from ${name}`,
@@ -28,8 +28,8 @@ export async function POST(request: Request) {
             `,
         });
 
-        if (toBrian.error) {
-            const errorMsg = typeof toBrian.error === 'object' ? (toBrian.error as any).message : String(toBrian.error);
+        if (brianError) {
+            const errorMsg = typeof brianError === 'object' ? (brianError as any).message : String(brianError);
             return NextResponse.json({ error: errorMsg }, { status: 500 });
         }
 
