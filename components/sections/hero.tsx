@@ -4,11 +4,11 @@ import { Globe, Rocket, Languages, GraduationCap, Laptop, Sparkles } from "lucid
 
 export function Hero() {
     const stats = [
-        { icon: Globe, label: "India", color: "text-blue-400" },
-        { icon: Languages, label: "English & Hindi", color: "text-purple-400" },
+        { icon: Globe, label: "Kenya", color: "text-blue-400" },
+        { icon: Languages, label: "English & Swahili", color: "text-purple-400" },
         { icon: Laptop, label: "Software Engineer", color: "text-blue-500" },
         { icon: Rocket, label: "Intern", color: "text-red-400" },
-        { icon: GraduationCap, label: "SRM University", color: "text-purple-500" },
+        { icon: GraduationCap, label: "Moringa", color: "text-purple-500" },
         { icon: Sparkles, label: "Good Boy", color: "text-yellow-400" },
     ];
 
@@ -24,7 +24,7 @@ export function Hero() {
                         <div className="w-48 h-48 md:w-64 md:h-64 rounded-xl overflow-hidden bg-neutral-800 border-4 border-neutral-700/50 shadow-2xl relative grayscale">
                             {/* Placeholder for avatar */}
                             <div className="w-full h-full flex items-center justify-center text-neutral-500">
-                                <span className="text-4xl font-bold">AS</span>
+                                <span className="text-4xl font-bold">BM</span>
                             </div>
                         </div>
                     </div>
@@ -37,7 +37,7 @@ export function Hero() {
                         </div>
 
                         <h1 className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-12">
-                            ARHAAN SIDDIQUEE
+                            BRIAN MELLY
                         </h1>
 
                         {/* Stats Grid */}

@@ -6,19 +6,19 @@ export function Contact() {
     const socials = [
         {
             name: "Twitter",
-            handle: "@ArhaanSiddique0",
+            handle: "@brianmelly",
             icon: Twitter,
             url: "https://twitter.com",
         },
         {
             name: "LinkedIn",
-            handle: "@arhaansiddiquee",
+            handle: "@brianmelly",
             icon: Linkedin,
             url: "https://linkedin.com",
         },
         {
             name: "Github",
-            handle: "@Arhaan-Siddiquee",
+            handle: "@brianmelly",
             icon: Github,
             url: "https://github.com",
         },
@@ -47,7 +47,7 @@ export function Contact() {
             </div>
 
             <footer className="mt-20 text-center text-gray-500 text-sm">
-                <p>&copy; {new Date().getFullYear()} Arhaan Siddiquee. All rights reserved.</p>
+                <p>&copy; {new Date().getFullYear()} Brian Melly. All rights reserved.</p>
             </footer>
         </section>
     );

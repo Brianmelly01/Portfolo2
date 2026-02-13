@@ -32,7 +32,7 @@ export function Education() {
             id: 3,
             year: "2023 - 2027",
             title: "Bachelor's Degree",
-            institution: "SRM University",
+            institution: "Moringa",
             description: "Computer Science and Engineering, specializing in AI & Machine Learning.",
             side: "right"
         }

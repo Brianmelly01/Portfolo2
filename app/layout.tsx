@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-    title: "Arhaan.Dev | Software Engineer",
-    description: "Portfolio of Arhaan Siddiquee, a Software Engineer based in India.",
+    title: "Melly.dev | Software Engineer",
+    description: "Portfolio of Brian Melly, a Software Engineer based in Kenya.",
 };
 
 export default function RootLayout({

@@ -16,7 +16,7 @@ export function Navbar() {
             <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-6">
                 {/* Logo */}
                 <Link href="/" className="text-xl font-bold tracking-tighter text-white">
-                    Arhaan.Dev
+                    Melly.dev
                 </Link>
 
                 {/* Desktop Navigation */}
