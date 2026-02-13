@@ -6,6 +6,7 @@ import { Projects } from "../components/sections/projects";
 import { Skills } from "../components/sections/skills";
 import { Methodologies } from "../components/sections/methodologies";
 import { ProjectManagement } from "../components/sections/project-management";
+import { Quote } from "../components/sections/quote";
 import { Contact } from "../components/sections/contact";
 
 export default function Home() {
@@ -16,8 +17,9 @@ export default function Home() {
             <About />
 
             <Skills />
-            <Methodologies />
             <ProjectManagement />
+            <Quote />
+            <Methodologies />
             <Projects />
             <Contact />
         </main>
