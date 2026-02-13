@@ -20,35 +20,43 @@ export async function POST(request: Request) {
             subject: `New Message from ${name}`,
             replyTo: email,
             html: `
-        <h3>New Contact Form Submission</h3>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
-      `,
+                <h3>New Contact Form Submission</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Message:</strong></p>
+                <p>${message}</p>
+            `,
         });
 
         if (toBrian.error) {
-            return NextResponse.json({ error: toBrian.error }, { status: 500 });
+            const errorMsg = typeof toBrian.error === 'object' ? (toBrian.error as any).message : String(toBrian.error);
+            return NextResponse.json({ error: errorMsg }, { status: 500 });
         }
 
         // 2. Send auto-responder to the sender
-        await resend.emails.send({
-            from: 'Brian Melly <onboarding@resend.dev>',
-            to: email,
-            subject: 'Message Received - Brian Melly',
-            html: `
-        <h3>Hi ${name},</h3>
-        <p>I've received your message, thank you for contacting me and I'll respond in a few.</p>
-        <br/>
-        <p>Best regards,</p>
-        <p>Brian Melly</p>
-      `,
-        });
+        // Note: Resend onboarding allows sending only to the owner's email.
+        // We wrap this in a try/catch so the main submission still succeeds even if the auto-responder is blocked.
+        try {
+            await resend.emails.send({
+                from: 'Brian Melly <onboarding@resend.dev>',
+                to: email,
+                subject: 'Message Received - Brian Melly',
+                html: `
+                    <h3>Hi ${name},</h3>
+                    <p>I've received your message, thank you for contacting me and I'll respond in a few.</p>
+                    <br/>
+                    <p>Best regards,</p>
+                    <p>Brian Melly</p>
+                `,
+            });
+        } catch (autoResponderError) {
+            console.error("Auto-responder failed (likely Resend onboarding restriction):", autoResponderError);
+        }
 
         return NextResponse.json({ success: true });
 
     } catch (error) {
-        return NextResponse.json({ error: (error as Error).message }, { status: 500 });
+        const errorMsg = error instanceof Error ? error.message : "An unexpected error occurred";
+        return NextResponse.json({ error: errorMsg }, { status: 500 });
     }
 }

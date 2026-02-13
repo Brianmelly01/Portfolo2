@@ -35,7 +35,10 @@ export function Contact() {
             if (data.success) {
                 setIsSuccess(true);
             } else {
-                setError(data.error || "Something went wrong. Please try again.");
+                const errorMessage = typeof data.error === 'object'
+                    ? (data.error.message || JSON.stringify(data.error))
+                    : (data.error || "Something went wrong. Please try again.");
+                setError(errorMessage);
             }
         } catch (err) {
             setError("Failed to send message. Please check your connection.");
