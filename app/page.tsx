@@ -17,9 +17,9 @@ export default function Home() {
             <About />
 
             <Skills />
+            <Methodologies />
             <ProjectManagement />
             <Quote />
-            <Methodologies />
             <Projects />
             <Contact />
         </main>
