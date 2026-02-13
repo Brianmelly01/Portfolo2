@@ -24,7 +24,7 @@ export function Contact() {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-500 font-medium uppercase tracking-wider">Email</p>
-                                <p className="text-gray-200 font-medium">brian@melly.dev</p>
+                                <p className="text-gray-200 font-medium">Brianmelly008@gmail.com</p>
                             </div>
                         </div>
 
@@ -34,7 +34,7 @@ export function Contact() {
                             </div>
                             <div>
                                 <p className="text-sm text-gray-500 font-medium uppercase tracking-wider">Phone</p>
-                                <p className="text-gray-200 font-medium">+254 700 000 000</p>
+                                <p className="text-gray-200 font-medium">+25790288540</p>
                             </div>
                         </div>
 
@@ -89,9 +89,14 @@ export function Contact() {
                 </div>
             </Card>
 
-            <footer className="text-center text-gray-500 text-sm border-t border-white/5 pt-10 flex flex-col items-center gap-2">
-                <p>&copy; {new Date().getFullYear()} Brian Melly. All rights reserved.</p>
-                <p className="text-xs uppercase tracking-widest text-gray-600">Crafted with passion and precision</p>
+            <footer className="pt-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+                <div className="text-3xl font-black text-white tracking-tighter">
+                    MELLY<span className="text-gray-500">.</span>DEV
+                </div>
+                <div className="flex flex-col items-center md:items-end gap-2 text-gray-500 text-sm">
+                    <p>&copy; {new Date().getFullYear()} Brian Melly. All rights reserved.</p>
+                    <p className="text-xs uppercase tracking-widest text-gray-600">Crafted with passion and precision</p>
+                </div>
             </footer>
         </section>
     );

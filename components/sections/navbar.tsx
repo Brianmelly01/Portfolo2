@@ -15,8 +15,8 @@ export function Navbar() {
         <nav className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-md border-b border-white/5">
             <div className="container mx-auto flex items-center justify-between h-16 px-4 md:px-6">
                 {/* Logo */}
-                <Link href="/" className="text-xl font-bold tracking-tighter text-white">
-                    Melly.dev
+                <Link href="/" className="text-xl font-black tracking-tighter text-white">
+                    MELLY<span className="text-gray-500">.</span>DEV
                 </Link>
 
                 {/* Desktop Navigation */}
