@@ -1,3 +1,5 @@
+import Link from "next/link";
+import Image from "next/image";
 import { Card } from "../ui/card";
 
 import { Globe, Rocket, Languages, GraduationCap, Laptop, Sparkles } from "lucide-react";
@@ -21,11 +23,15 @@ export function Hero() {
                 <div className="flex flex-col md:flex-row gap-8 md:gap-12 relative z-10">
                     {/* Avatar Area */}
                     <div className="flex-shrink-0">
-                        <div className="w-48 h-48 md:w-64 md:h-64 rounded-xl overflow-hidden bg-neutral-800 border-4 border-neutral-700/50 shadow-2xl relative grayscale">
-                            {/* Placeholder for avatar */}
-                            <div className="w-full h-full flex items-center justify-center text-neutral-500">
-                                <span className="text-4xl font-bold">BM</span>
-                            </div>
+                        <div className="w-48 h-48 md:w-64 md:h-64 rounded-xl overflow-hidden bg-neutral-800 border-4 border-neutral-700/50 shadow-2xl relative grayscale hover:grayscale-0 transition-all duration-500">
+                            <Image
+                                src="/avatar.png"
+                                alt="Brian Melly"
+                                width={256}
+                                height={256}
+                                className="w-full h-full object-cover"
+                                priority
+                            />
                         </div>
                     </div>
 
