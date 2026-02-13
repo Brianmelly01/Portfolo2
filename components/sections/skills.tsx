@@ -1,37 +1,79 @@
 import { Card } from "../ui/card";
 
 export function Skills() {
-    const skills = [
-        { name: "TensorFlow", color: "bg-green-500" },
-        { name: "AWS Solutions", color: "bg-blue-500" },
-        { name: "Smart Contracts", color: "bg-purple-500" },
-        { name: "Blockchain", color: "bg-yellow-500" }
-    ];
-
     return (
         <section id="skills" className="py-20 container mx-auto px-4 md:px-6">
-            <Card className="p-8 md:p-12 bg-black border border-white/10 relative overflow-hidden group">
-                {/* Lightning Icon Placeholder */}
-                <div className="absolute left-8 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-white text-black flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                </div>
+            <div className="mb-12">
+                <h2 className="text-4xl font-black text-white uppercase tracking-tighter flex items-center gap-4">
+                    <span className="w-12 h-1 bg-white"></span>
+                    SKILLS & EXPERTISE
+                </h2>
+            </div>
 
-                <div className="ml-24">
-                    <p className="text-gray-400 mb-2">Currently expanding my knowledge in</p>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-6">
-                        Advanced Machine Learning, Cloud Architecture & Web3
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                {/* Technical Proficiency */}
+                <div className="space-y-8">
+                    <h3 className="text-2xl font-bold text-white border-l-4 border-white pl-4">
+                        Technical Proficiency
                     </h3>
+                    <p className="text-gray-400">
+                        Years of dedicated practice and real-world projects have sharpened my technical skills. Each percentage represents my confidence and experience level with these technologies.
+                    </p>
 
-                    <div className="flex flex-wrap gap-4">
-                        {skills.map((skill) => (
-                            <div key={skill.name} className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/5">
-                                <div className={`w-2 h-2 rounded-full ${skill.color}`}></div>
-                                <span className="text-gray-200 text-sm font-medium">{skill.name}</span>
+                    <div className="space-y-6">
+                        {[
+                            { name: "React.js", level: 90 },
+                            { name: "JavaScript", level: 85 },
+                            { name: "Docker", level: 65 },
+                            { name: "TypeScript", level: 70 },
+                            { name: "Node.js", level: 65 }
+                        ].map((skill) => (
+                            <div key={skill.name}>
+                                <div className="flex justify-between mb-2">
+                                    <span className="text-white font-medium">{skill.name}</span>
+                                    <span className="text-gray-500">{skill.level}%</span>
+                                </div>
+                                <div className="h-1 bg-gray-800 rounded-full overflow-hidden">
+                                    <div
+                                        className="h-full bg-white transition-all duration-1000 ease-out"
+                                        style={{ width: `${skill.level}%` }}
+                                    />
+                                </div>
                             </div>
                         ))}
                     </div>
                 </div>
-            </Card>
+
+                {/* Tools & Technologies */}
+                <div className="space-y-8">
+                    <h3 className="text-2xl font-bold text-white border-l-4 border-white pl-4">
+                        Tools & Technologies
+                    </h3>
+                    <p className="text-gray-400">
+                        My toolkit is constantly expanding as I explore new technologies that enhance user experiences and streamline development workflows. These are my daily companions in crafting digital solutions.
+                    </p>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {[
+                            { name: "React", letter: "R" },
+                            { name: "TypeScript", letter: "T" },
+                            { name: "Node.js", letter: "N" },
+                            { name: "MongoDB", letter: "M" },
+                            { name: "Express", letter: "E" },
+                            { name: "Styled Components", letter: "S" }
+                        ].map((tool) => (
+                            <Card key={tool.name} className="p-4 bg-[#111] border-white/5 flex items-center gap-4 hover:bg-[#1a1a1a] transition-colors group">
+                                <div className="w-10 h-10 rounded bg-neutral-800 text-white flex items-center justify-center font-bold group-hover:bg-white group-hover:text-black transition-colors">
+                                    {tool.letter}
+                                </div>
+                                <span className="text-gray-300 font-medium group-hover:text-white transition-colors">
+                                    {tool.name}
+                                </span>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+            </div>
         </section>
     );
 }
