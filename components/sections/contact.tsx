@@ -1,6 +1,6 @@
 "use client";
 
-import { Mail, Phone, MapPin, Loader2, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Loader, CheckCircle } from "lucide-react";
 import { Card } from "../ui/card";
 import { Button } from "../ui/button";
 import { useState } from "react";
@@ -66,7 +66,7 @@ export function Contact() {
             <Card className="p-8 md:p-12 bg-[#0a0a0a] border-white/5 grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700 relative overflow-hidden">
                 {isSuccess && (
                     <div className="absolute inset-0 bg-black/90 z-20 flex flex-col items-center justify-center text-center p-8 backdrop-blur-sm animate-in fade-in duration-500">
-                        <CheckCircle2 className="w-20 h-20 text-green-500 mb-6 animate-bounce" />
+                        <CheckCircle className="w-20 h-20 text-green-500 mb-6 animate-bounce" />
                         <h3 className="text-3xl font-bold text-white mb-4 tracking-tighter uppercase">Message Sent Successfully!</h3>
                         <p className="text-gray-400 max-w-md text-lg">
                             Thank you for reaching out, {formData.name || 'friend'}! I&apos;ve received your message and an auto-confirmation has been sent to your email. I&apos;ll get back to you shortly.
@@ -170,7 +170,7 @@ export function Contact() {
                             className="w-full bg-white text-black hover:bg-gray-200 h-14 font-black text-lg rounded-xl uppercase tracking-[0.2em] transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed group"
                         >
                             {isSubmitting ? (
-                                <Loader2 className="w-6 h-6 animate-spin" />
+                                <Loader className="w-6 h-6 animate-spin" />
                             ) : (
                                 "Send Message"
                             )}
@@ -184,7 +184,7 @@ export function Contact() {
                     MELLY<span className="text-gray-500">.</span>DEV
                 </div>
                 <div className="flex flex-col items-center md:items-end gap-2 text-gray-500 text-sm">
-                    <p>&copy; {new Date().getFullYear()} Brian Melly. All rights reserved.</p>
+                    <p>&copy; 2026 Brian Melly. All rights reserved.</p>
                     <p className="text-xs uppercase tracking-widest text-gray-600">Crafted with passion and precision</p>
                 </div>
             </footer>

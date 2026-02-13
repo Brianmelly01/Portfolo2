@@ -1,3 +1,5 @@
+"use client";
+
 import { Quote as QuoteIcon } from "lucide-react";
 
 export function Quote() {
